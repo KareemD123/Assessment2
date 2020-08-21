@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To Do List</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>To Do List</h1>
+    <form action="/create" method="POST" autocomplete="off">
+      <input type="text" name="todo" required />
+      <button type="submit">Add To Todo</button>
+    </form>
+    <ul>
+      <% todos.forEach(function(t) { %>
+      <li>
+        <a href="/todos/<%= t.id %>"><%= t.todo %></a> - <%= t.done ? 'done' :
+        'not done' %>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
